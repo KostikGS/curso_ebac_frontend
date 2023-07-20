@@ -6,36 +6,35 @@
 <body>
     <h2>Formulário com campos numéricos</h2>
     <form id="myForm" onsubmit="return validarFormulario()">
-        <label for="campoA">Campo A:</label>
-        <input type="number" id="campoA" name="campoA" required>
+        <label for="valorA">Campo A:</label>
+        <input type="number" id="valorA" name="valorA" required>
         <br>
-        <label for="campoB">Campo B:</label>
-        <input type="number" id="campoB" name="campoB" required>
+        <label for="valorB">Campo B:</label>
+        <input type="number" id="valorB" name="valorB" required>
         <br>
-        <button type="submit">Enviar</button>
+        <button type="submit">Validar</button>
     </form>
-
     <div id="mensagem"></div>
 
     <script>
         function validarFormulario() {
             event.preventDefault();
-            var campoA = document.getElementById("campoA").value;
-            var campoB = document.getElementById("campoB").value;
+            var valorA = document.getElementById("valorA").value;
+            var valorB = document.getElementById("valorB").value;
 
-            if (parseInt(campoB) <= parseInt(campoA)) {
+            if (parseInt(valorB) <= parseInt(valorA)) {
                 exibirMensagem("O número B deve ser maior que o número A.", false);
                 return false; //Não vai enviar o formulário
             } else {
-                exibirMensagem("Formulário válido! Enviando...", true);
-                return true; //envia do formulário
+                exibirMensagem("Formulário válido!", true);
+                return true; //envio do formulário
             }
         }
 
         function exibirMensagem(mensagem, msgPositiva) {
             var mensagemDiv = document.getElementById("mensagem");
             mensagemDiv.innerHTML = mensagem;
-            
+
             if (msgPositiva) {
                 mensagemDiv.style.color = "green";
             } else {
