@@ -1,0 +1,11 @@
+button{
+    background-color: grey;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+#tasklist:hover{
+    cursor: pointer;
+}
